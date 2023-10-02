@@ -41,6 +41,12 @@ async function checkWeather(city) {
 			}
 }
 
+searchBox.addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // код клавиши Enter
+        searchBtn.click();
+    }
+	
 searchBtn.addEventListener('click', ()=>{
 	checkWeather(searchBox.value);
 })
