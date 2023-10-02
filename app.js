@@ -41,15 +41,16 @@ async function checkWeather(city) {
 			}
 }
 
-searchBox.addEventListener('keypress', function (e) {
-    var key = e.which || e.keyCode;
-    if (key === 13) { // код клавиши Enter
-        searchBtn.click();
-    }
-	
+document.addEventListener('keydown', function (e) {
+	if (e.key === 'Enter') {
+		checkWeather(searchBox.value);
+	}
+}) //Обработчик события связанный с выполнением поиска по клавиши Enter
+
 searchBtn.addEventListener('click', ()=>{
 	checkWeather(searchBox.value);
-})
+}) //Обработчик события связанный с выполнением поиска по кнопке Поиск
+
 
 
 
@@ -66,3 +67,10 @@ searchBtn.addEventListener('click', ()=>{
 //Она позволяет получать данные с сервера и отправлять данные на сервер, 
 //используя различные методы HTTP-запросов. Кроме того, функция fetch () позволяет устанавливать различные 
 //параметры запроса, такие как заголовки, методы, тело запроса и т.д.
+
+// Обаботчик события по клавиши
+// document.addEventListener('keydown', function (e) {
+// 	console.log(e);
+// })
+// Так можно получить всю инфу о нажатой клавиши, написать этот код и нажать
+// клавишу, о которой мы хотим узнать информацию. 
