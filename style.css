@@ -116,3 +116,34 @@ body {
 	display: none;
 }
 /*Weather end*/
+
+@media screen and (max-width: 480px) {
+	.col img {
+		display: none;
+	}
+
+	.weather h1 {
+	font-size: 50px;
+	font-weight: 500;
+	}
+
+	.weather h2 {
+	font-size: 40px;
+	}
+
+	.weather .details {
+		flex-direction: column;
+	}
+
+	.weather .col {
+		text-align: center;
+	}
+
+	.hum {
+	margin-bottom: 20px;
+	}
+
+	.humidity, .wind {
+	font-size: 40px;
+	}
+}
