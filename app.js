@@ -2,7 +2,8 @@ const apiKey = "479e842b082406c4861b2872e7a28fef";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 
 const searchBox = document.querySelector('.search input');
-const searchBtn = document.querySelector('.search button');
+const searchBtn = document.getElementById('loupe');
+const searchFavoriteBtn = document.getElementById('favourites');
 const weatherIcon = document.querySelector('.weather_icon');
 
 async function checkWeather(city) {   
@@ -10,7 +11,8 @@ async function checkWeather(city) {
 
 	if(response.status == 404) {
 		document.querySelector('.error').style.display = 'block'; 
-		document.querySelector('.weather').style.display = 'none'; 
+		document.querySelector('.weather').style.display = 'none';
+		document.querySelector('.favourites').style.display = 'none'; 
 	} else {
 			var data = await response.json();
 
@@ -38,6 +40,7 @@ async function checkWeather(city) {
 	document.querySelector('.weather').style.display = 'block';
 	document.querySelector('.error').style.display = 'none'; 
 
+	document.querySelector('.favourites').style.display = 'none';
 			}
 }
 
@@ -51,6 +54,17 @@ searchBtn.addEventListener('click', ()=>{
 	checkWeather(searchBox.value);
 }) //Обработчик события связанный с выполнением поиска по кнопке Поиск
 
+document.addEventListener('keydown', function (e) {
+	if (e.key === '1') {
+		document.querySelector('.favourites').style.display = 'block';
+		document.querySelector('.weather').style.display = 'none';
+	}
+});
+
+searchFavoriteBtn.onclick = function () {
+	document.querySelector('.favourites').style.display = 'block';
+	document.querySelector('.weather').style.display = 'none';
+};
 
 
 
