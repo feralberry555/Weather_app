@@ -7,7 +7,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-	<link rel="icon" type="img/icon-cloud_moon_rain.svg">
+	<link rel="icon" type="img/icon-cloud_moon_rain.svg" href="">
+	<link rel="shortcut icon" href="img/icon-cloud_moon_rain.svg">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +16,8 @@
 		<!-- Search start -->
 		<div class="search">
 			<input type="text" placeholder="enter city name" spellcheck="false"> <!-- spellcheck - атрибут для проверки арфографии в форме -->
-			<button><img src="img/search.png" alt="#"></button>
+			<button id="loupe"><img src="img/search.png" title="Поиск" alt="#"></button>
+			<button id="favourites"><img src="img/icon_favorite2.png" title="Избранное" class="favourit" alt="#"></button>
 		</div>
 		<div class="error">
 			<p>Invalid city name</p>
@@ -50,6 +52,14 @@
 
 		</div>
 		<!-- Weather end -->
+		<section class="favourites">
+				<div class="favorit_block">
+					<a href="">Город</a>
+					<a href="">Температура</a> 
+					<a href="">Ветер</a>  
+				</div>
+		</section>
+
 	</div>
 
 	<script src="app.js" defer></script>	
