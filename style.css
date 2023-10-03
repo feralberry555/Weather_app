@@ -38,7 +38,7 @@ body {
 	height: 60px;
 	border-radius: 30px;
 	flex: 1; /*flex: 1; - Это сокращение для использования flex-grow, 									сжиматься при необходимости.*/
-	margin-right: 16px;
+	margin-right: 25px;
 	font-size: 18px;
 }
 
@@ -50,10 +50,15 @@ body {
 	width: 60px;
 	height: 60px;
 	cursor: pointer;
+	margin-right: 20px;
+}
+
+.search button:last-child {
+	margin-right: 0;
 }
 
 .search button img {
-	width: 16px;
+	width: 23px;
 }
 
 .error {
@@ -118,6 +123,48 @@ body {
 	display: none;
 }
 /*Weather end*/
+
+.favourites {
+	border: 0;
+	outline: 0;
+	width: 100%; 
+	max-width: 100%;
+	min-width: 100px;
+	height: 80px;
+	background-color: white;
+	border-radius: 20px;
+	margin-top: 30px;
+
+	display: none;
+}
+
+/*.favourites_wrapper {
+	max-width: 400px;
+ 	margin: 0 auto;
+}*/
+
+.favorit_block {
+	height: 100%;
+	display: flex;
+	align-items: center;
+} 
+
+.favourites a {
+	border: 0;
+	outline: 0; /*outline - линия которая рисуется за пределами границ, что бы выделить элемент*/ 
+	color: #555;
+	font-size: 22px;
+	text-decoration: none;
+	margin-left: 25px;
+} 
+
+.favourites a:first-child {
+	margin-left: 23px;
+	color: black;
+	font-size: 28px;
+}
+
+
 
 @media screen and (max-width: 480px) {
 	.col img {
