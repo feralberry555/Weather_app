@@ -3,6 +3,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=
 
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.getElementById('loupe');
+const searchBtnSettings = document.getElementById('settings');
 const searchFavoriteBtn = document.getElementById('favourites');
 const weatherIcon = document.querySelector('.weather_icon');
 
@@ -16,7 +17,7 @@ async function checkWeather(city) {
 	} else {
 			var data = await response.json();
 
-	document.querySelector('.city').innerHTML = data.name;
+ 	document.querySelector('.city').innerHTML = data.name;
 	document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c'; //Math.round - возвращает число к округлённое к ближайшему целому числу
 	document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
 	document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
@@ -39,20 +40,28 @@ async function checkWeather(city) {
 
 	document.querySelector('.weather').style.display = 'block';
 	document.querySelector('.error').style.display = 'none'; 
-
 	document.querySelector('.favourites').style.display = 'none';
 			}
+
 }
 
 document.addEventListener('keydown', function (e) {
 	if (e.key === 'Enter') {
 		checkWeather(searchBox.value);
-	}
-}) //Обработчик события связанный с выполнением поиска по клавиши Enter
 
-searchBtn.addEventListener('click', ()=>{
+		const getInput = document.getElementById('text');
+		getInput.value = ''; //очищает сткоку в инпут с помощью кнопки 'Поиск'
+	}
+}); //Обработчик события связанный с выполнением поиска по клавиши Enter
+
+searchBtn.addEventListener('click', () => {	
 	checkWeather(searchBox.value);
-}) //Обработчик события связанный с выполнением поиска по кнопке Поиск
+
+	const getInput = document.getElementById('text');
+	getInput.value = '';
+ //автоматическое удаление из инпут текста при поиске
+
+}); //Обработчик события связанный с выполнением поиска по кнопке Поиск
 
 document.addEventListener('keydown', function (e) {
 	if (e.key === '1') {
@@ -64,9 +73,17 @@ document.addEventListener('keydown', function (e) {
 searchFavoriteBtn.onclick = function () {
 	document.querySelector('.favourites').style.display = 'block';
 	document.querySelector('.weather').style.display = 'none';
+	
 };
 
 
+
+
+
+
+	// document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c'; //Math.round - возвращает число к округлённое к ближайшему целому числу
+	// document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
+	// document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
 //async - перед функцией означает что, функция всегда 
 //возвращает обещание, а другие значения автоматически заворачиваются в разрешённое обещание.
