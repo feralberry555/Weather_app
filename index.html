@@ -15,7 +15,7 @@
 	<div class="card">
 		<!-- Search start -->
 		<div class="search">
-			<input type="text" id="text" placeholder="enter city name" spellcheck="false"> <!-- spellcheck - атрибут для проверки арфографии в форме -->
+			<input type="text" id="text" placeholder="введите город" spellcheck="false"> <!-- spellcheck - атрибут для проверки арфографии в форме -->
 			<button id="loupe"><img src="img/search.png" title="Поиск" alt="#"></button>
 			<button id="settings"><img src="img/settings.png" title="Настройки" alt="#"></button>
 		</div>
@@ -31,7 +31,7 @@
 
 			<img src="img/rain.png" alt="#" class="weather_icon">
 			<h1 class="temp">22</h1>
-			<h2 class="city" >Moscow</h2>
+			<h2 class="city" translate="yes">Moscow</h2>
 
 			<div class="details">
 
@@ -56,17 +56,21 @@
 		<!-- Weather end -->
 		<section class="favourites">
 				<div class="favorit_block">
-					<a id="citys" href="">Город</a>
-					<a id="temps" href="">Температура</a> 
-					<a id="winds" href="">Ветер</a>  
+					<a id="citys" href="#">Город</a>
+					<a id="temps" href="#">Температура</a> 
+					<a id="winds" href="#">Ветер</a>  
 				</div>
 		</section>
 
-		<div class="settings_block">
-		 <div>
-		 	<!-- Здесь будет созданно кошко настроек, которое будет открываться по кнопке "Настройки" -->
-		 </div>
-		</div>
+		<section class="settings_block">
+			<div class="settings_block-button">
+				<button id="settings_button"><img src="img/arrow-back.png" alt="Назад"></button>
+			</div>
+			<a href="#">Избранные</a>
+			<a href="#">Настройки</a>
+			<a href="#">Об Авторе</a>
+			<a href="#">Войти</a>
+		</section>
 	</div>
 
 	<script src="app.js" defer></script>	
