@@ -19,7 +19,7 @@ body {
 	padding: 40px 35px;
 	text-align: center;
 }
-/*Search start*/
+/*Search style start*/
 .search {
 	width: 100%;
 	display: flex;
@@ -68,11 +68,12 @@ body {
 	margin-top: 10px;
 	display: none;
 }
-/*Search end*/
+/*Search style end*/
 
-/*Weather start*/
+/*Weather style start*/
 .weather {
 	position: relative;
+	display: none;
 }
 
 .weather button img {
@@ -144,8 +145,9 @@ body {
 /*.weather {
 	display: none;
 }*/
-/*Weather end*/
+/*Weather style end*/
 
+/*Favourites style start*/
 .favourites {
 	border: 0;
 	outline: 0;
@@ -185,8 +187,46 @@ body {
 	color: black;
 	font-size: 28px;
 }
+/*Favourites style end*/
+
+/*Settings style start*/
+.settings_block {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 3px 0 50px;
+	gap: 30px;
+
+	display: none;
+}
+
+.settings_block-button {
+	display: flex;
+	justify-content: end;
+}
+
+.settings_block button {
+	border: 0;
+	outline: 0; 
+	background-color: white;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+}
+
+.settings_block button img {
+	width: 40px;
+}
+
+.settings_block a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 40px;
+}
 
 
+/*Settings style end*/
 
 @media screen and (max-width: 480px) {
 	.col img {
