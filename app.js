@@ -3,9 +3,10 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=
 
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.getElementById('loupe');
-const searchBtnSettings = document.getElementById('settings');
 const searchFavoriteBtn = document.getElementById('favourites');
 const weatherIcon = document.querySelector('.weather_icon');
+const BtnSettings = document.getElementById('settings');
+const BtnBack = document.getElementById('settings_button');
 
 async function checkWeather(city) {   
 	const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -18,6 +19,7 @@ async function checkWeather(city) {
 			var data = await response.json();
 
  	document.querySelector('.city').innerHTML = data.name;
+
 	document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c'; //Math.round - возвращает число к округлённое к ближайшему целому числу
 	document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
 	document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
@@ -76,10 +78,17 @@ searchFavoriteBtn.onclick = function () {
 	
 };
 
+BtnSettings.onclick = function () { //Создала кнопку, для перехода в "Настройки"
+	document.querySelector('.search').style.display = 'none';
+	document.querySelector('.weather').style.display = 'none';
+	document.querySelector('.settings_block').style.display = 'flex';
+}
 
-
-
-
+BtnBack.onclick = function () { //Создала кнопку назад, для перехода в "Поиск"
+	document.querySelector('.search').style.display = 'flex';
+	document.querySelector('.weather').style.display = 'block';
+	document.querySelector('.settings_block').style.display = 'none';
+}
 
 	// document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c'; //Math.round - возвращает число к округлённое к ближайшему целому числу
 	// document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
